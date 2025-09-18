@@ -462,17 +462,31 @@ require('lazy').setup({
     end,
   },
 
-  -- nvim-tree plugin for showing a 
+  -- nvim-tree plugin for showing a directory tree
   {
-    "nvim-tree/nvim-tree.lua",
-    version = "*",
+    'nvim-tree/nvim-tree.lua',
+    version = '*',
     lazy = false,
     dependencies = {
-      "nvim-tree/nvim-web-devicons",
+      'nvim-tree/nvim-web-devicons',
     },
     config = function()
-      require("nvim-tree").setup {}
+      require('nvim-tree').setup {}
     end,
+  },
+
+  --auto-session plugin for restoring windows depending on the current working directory
+  {
+    'rmagatti/auto-session',
+    lazy = false,
+
+    ---enables autocomplete for opts
+    ---@module "auto-session"
+    ---@type AutoSession.Config
+    opts = {
+      suppressed_dirs = { '~/', '~/Projects', '~/Downloads', '/' },
+      -- log_level = 'debug',
+    },
   },
 
   -- LSP Plugins

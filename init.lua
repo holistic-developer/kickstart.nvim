@@ -170,8 +170,8 @@ vim.o.confirm = true
 --  See `:help vim.keymap.set()`
 
 -- Move current line up or down (as I am used to from other editors)
-vim.keymap('n', '<C-S-Up>', ':m -2<CR>')
-vim.keymap('n', '<C-S-Down>', ':m +1<CR>')
+vim.keymap.set('n', '<C-S-Up>', ':m -2<CR>')
+vim.keymap.set('n', '<C-S-Down>', ':m +1<CR>')
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`

@@ -479,6 +479,28 @@ require('lazy').setup({
     end,
   },
 
+  {
+    'nvimdev/dashboard-nvim',
+    event = 'VimEnter',
+    config = function()
+      require('dashboard').setup {
+        config = {
+          shortcut = {},
+          header = {
+            '███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗',
+            '████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║',
+            '██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║',
+            '██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║',
+            '██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║',
+            '╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝',
+          },
+          footer = {},
+        },
+      }
+    end,
+    dependencies = { { 'nvim-tree/nvim-web-devicons' } },
+  },
+
   --auto-session plugin for restoring windows depending on the current working directory
   {
     'rmagatti/auto-session',
@@ -486,7 +508,7 @@ require('lazy').setup({
 
     ---enables autocomplete for opts
     ---@module "auto-session"
-    ---@type AutoSession.Config
+    ---@type AutoSession.Config:
     opts = {
       suppressed_dirs = { '~/', '~/Projects', '~/Downloads', '/' },
       -- log_level = 'debug',
